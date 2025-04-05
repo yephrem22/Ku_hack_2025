@@ -104,7 +104,7 @@
   }
 
   .back-button {
-    background-color: #ccc;
+    background-color: #ed2b48;
     margin-top: 2rem;
   }
 </style>

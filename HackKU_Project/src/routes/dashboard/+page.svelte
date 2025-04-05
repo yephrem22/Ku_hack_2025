@@ -1,5 +1,6 @@
 <script>
   // Later, we can pass user's name here too
+  import { onMount } from 'svelte'; // 🆕 Added for lifecycle
   import CardLink from '../../lib/CardLink.svelte';
 
   const cards = [
@@ -24,6 +25,26 @@
       description: "Set up reminders for your perscriptions."
     }
   ];
+
+  //common reminders for alzheimers
+  const reminders = [ 
+    "Don't forget to drink some water.",
+    "Take a deep breath. You're doing great.",
+    "Have you eaten something today?",
+    "Time to stretch your legs for a bit!",
+    "Call someone you care about!",
+    "Review your Memento Box memories when you have time.",
+    "Double check your medication schedule today."
+  ];
+
+  //on clicking to the dashboard you get a reminder
+  onMount(() => {
+  setTimeout(() => {
+    const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
+    alert(randomReminder); // This shows once, 1.5 seconds after page loads
+  }, 1500); // 1500 milliseconds = 1.5 seconds
+});
+
 </script>
 
 <style>
@@ -49,7 +70,6 @@
     gap: 1.5rem;
     margin-top: 2rem;
   }
-
 </style>
 
 <div class="dashboard">
@@ -61,6 +81,5 @@
       <CardLink {...card} />
     {/each}
   </div>
-  
 </div>
 

@@ -2,7 +2,7 @@
     export let href = "/";
     export let title = "Title";
     export let description = "Description";
-  </script>
+</script>
   
   <a href={href} class="card-link">
     <div class="card">

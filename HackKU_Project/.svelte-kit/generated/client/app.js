@@ -19,7 +19,7 @@ export const dictionary = {
 		"/dashboard": [3],
 		"/log_in": [4],
 		"/memento-box": [5],
-		"/memory_review": [6],
+		"/memory-review": [6],
 		"/risk_quiz": [7],
 		"/signup": [8]
 	};

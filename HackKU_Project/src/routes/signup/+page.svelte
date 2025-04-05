@@ -6,7 +6,6 @@
   let password = '';
 
   function handleSubmit() {
-    // In a real app you'd handle validation/auth here
     if (name && age && password) {
       goto('/dashboard');
     } else {

@@ -17,6 +17,11 @@
       href: "/memory-review",
       title: "Memory Review Quiz",
       description: "Test yourself on the memories you've stored."
+    },
+    {
+      href: "/medication-reminder",
+      title: "Medication Reminder",
+      description: "Set up reminders for your perscriptions."
     }
   ];
 </script>

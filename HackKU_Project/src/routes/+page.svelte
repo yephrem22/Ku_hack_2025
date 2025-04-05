@@ -72,7 +72,7 @@
     This site helps people with Alzheimer's reinforce important memories
     and build routines by engaging with personalized memory flashcards.
   </p>
-  <a href="/log_in">
+  <a href="/log-in">
     <button>Log In</button>
   </a>
   <a href="/signup">

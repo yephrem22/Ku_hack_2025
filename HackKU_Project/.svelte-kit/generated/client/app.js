@@ -17,10 +17,10 @@ export const server_loads = [];
 export const dictionary = {
 		"/": [2],
 		"/dashboard": [3],
-		"/log_in": [4],
+		"/log-in": [4],
 		"/memento-box": [5],
 		"/memory-review": [6],
-		"/risk_quiz": [7],
+		"/risk-quiz": [7],
 		"/signup": [8]
 	};
 

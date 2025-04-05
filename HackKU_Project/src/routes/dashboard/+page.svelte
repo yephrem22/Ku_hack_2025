@@ -14,7 +14,7 @@
       description: "Answer personal memory questions to help you recall your life story."
     },
     {
-      href: "/memory-review",
+      href: "/memory_review",
       title: "Memory Review Quiz",
       description: "Test yourself on the memories you've stored."
     },

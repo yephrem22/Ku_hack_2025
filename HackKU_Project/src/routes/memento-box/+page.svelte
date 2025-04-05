@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
 
   let questions = [
     "What is your earliest memory?",
@@ -30,26 +31,23 @@
     "Is there a family heirloom or item that means a lot to you?"
   ];
 
-  // Each answer will be tied to its index in the questions array
-  let answers = [];
+  let answerMap = {};
 
-  // Load any existing answers (if revisiting)
   onMount(() => {
-    const stored = localStorage.getItem('mementoAnswers');
+    const stored = localStorage.getItem('mementoAnswersMap');
     if (stored) {
-      answers = JSON.parse(stored);
+      answerMap = JSON.parse(stored);
     } else {
-      answers = Array(questions.length).fill('');
+      questions.forEach(q => {
+        answerMap[q] = ""; // Initialize empty answers
+      });
     }
   });
 
   function submitAnswers() {
-    localStorage.setItem('mementoAnswers', JSON.stringify(answers));
+    localStorage.setItem('mementoAnswersMap', JSON.stringify(answerMap));
     alert('Your answers have been saved!');
   }
-
-  import { goto } from '$app/navigation'; // for navigation
-
 </script>
 
 <style>
@@ -95,15 +93,13 @@
 
 <div class="container">
   <h2>Memento Box</h2>
-  {#each questions as question, i}
+  {#each questions as question}
     <div class="question-block">
       <label>{question}</label>
-      <textarea bind:value={answers[i]}></textarea>
+      <textarea bind:value={answerMap[question]}></textarea>
     </div>
   {/each}
-</div>
 
-<div style="margin-top: 2rem;">
   <button on:click={submitAnswers} class="save-button">Save Answers</button>
   <button on:click={() => goto('/dashboard')} class="dashboard-button">Back to Dashboard</button>
 </div>

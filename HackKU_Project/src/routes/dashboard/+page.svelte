@@ -1,7 +1,7 @@
 <script>
-  // Later, we can pass user's name here too
-  import { onMount } from 'svelte'; // 🆕 Added for lifecycle
+  import { onMount } from 'svelte';
   import CardLink from '../../lib/CardLink.svelte';
+  import CustomAlert from '../../lib/CustomAlert.svelte'; // Import custom alert
 
   const cards = [
     {
@@ -26,7 +26,6 @@
     }
   ];
 
-  //common reminders for alzheimers
   const reminders = [ 
     "Don't forget to drink some water.",
     "Take a deep breath. You're doing great.",
@@ -37,14 +36,16 @@
     "Double check your medication schedule today."
   ];
 
-  //on clicking to the dashboard you get a reminder
-  onMount(() => {
-  setTimeout(() => {
-    const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-    alert(randomReminder); // This shows once, 1.5 seconds after page loads
-  }, 1500); // 1500 milliseconds = 1.5 seconds
-});
+  let alertMessage = '';
+  let showAlert = false;
 
+  onMount(() => {
+    setTimeout(() => {
+      const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
+      alertMessage = randomReminder;
+      showAlert = true;
+    }, 1500);
+  });
 </script>
 
 <style>
@@ -81,5 +82,7 @@
       <CardLink {...card} />
     {/each}
   </div>
+
+  <CustomAlert {alertMessage} bind:showAlert />
 </div>
 

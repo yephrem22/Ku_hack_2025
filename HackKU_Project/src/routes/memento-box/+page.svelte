@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import CustomAlert from '../../lib/CustomAlert.svelte'; // Import CustomAlert
 
   let questions = [
     "What is your earliest memory?",
@@ -32,6 +33,8 @@
   ];
 
   let answerMap = {};
+  let showAlert = false;
+  let alertMessage = '';
 
   onMount(() => {
     const stored = localStorage.getItem('mementoAnswersMap');
@@ -46,7 +49,8 @@
 
   function submitAnswers() {
     localStorage.setItem('mementoAnswersMap', JSON.stringify(answerMap));
-    alert('Your answers have been saved!');
+    alertMessage = 'Your answers have been saved!';
+    showAlert = true; // Trigger custom alert
   }
 </script>
 
@@ -102,6 +106,9 @@
 
   <button on:click={submitAnswers} class="save-button">Save Answers</button>
   <button on:click={() => goto('/dashboard')} class="dashboard-button">Back to Dashboard</button>
+
+  <!-- CustomAlert component -->
+  <CustomAlert {alertMessage} {showAlert} />
 </div>
 
 

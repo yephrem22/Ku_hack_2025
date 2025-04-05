@@ -22,7 +22,7 @@
     {
       href: "/medication-reminder",
       title: "Medication Reminder",
-      description: "Set up reminders for your perscriptions."
+      description: "Set up reminders for your prescriptions."
     }
   ];
 

@@ -20,9 +20,9 @@
       description: "Test yourself on the memories you've stored."
     },
     {
-      href: "/medication-reminder",
-      title: "Medication Reminder",
-      description: "Set up reminders for your prescriptions."
+      href: "/memory-album",
+      title: "Memory Album",
+      description: "See photos to remind you of your past."
     }
   ];
 

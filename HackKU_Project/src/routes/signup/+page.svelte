@@ -1,19 +1,60 @@
 <script>
-  import { goto } from '$app/navigation';
+  import { goto } from "$app/navigation";
+  import { supabase } from "$lib/supabaseClient";
 
-  let name = '';
-  let age = '';
-  let password = '';
+  let name = "";
+  let age = "";
+  let password = "";
+  let email = "";
 
-  function handleSubmit() {
-    // In a real app you'd handle validation/auth here
-    if (name && age && password) {
-      goto('/dashboard');
+  async function signUp() {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          display_name: name,
+          age: parseInt(age),
+        },
+      },
+    });
+
+    if (error) {
+      console.error("Signup error:", error.message);
+      alert("Signup failed: " + error.message);
     } else {
-      alert('Please fill out all fields.');
+      console.log("User created:", data.user);
+      goto("/dashboard");
     }
   }
 </script>
+
+<div class="signup-container">
+  <h2>Create Your Account</h2>
+  <form on:submit|preventDefault={signUp}>
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text" bind:value={name} required />
+    </div>
+
+    <div>
+      <label for="age">Age</label>
+      <input id="age" type="number" min="0" bind:value={age} required />
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" bind:value={email} required />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input id="password" type="password" bind:value={password} required />
+    </div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
 
 <style>
   .signup-container {
@@ -66,25 +107,3 @@
     color: #444;
   }
 </style>
-
-<div class="signup-container">
-  <h2>Create Your Account</h2>
-  <form on:submit|preventDefault={handleSubmit}>
-    <div>
-      <label for="name">Name</label>
-      <input id="name" type="text" bind:value={name} required />
-    </div>
-
-    <div>
-      <label for="age">Age</label>
-      <input id="age" type="number" min="0" bind:value={age} required />
-    </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input id="password" type="password" bind:value={password} required />
-    </div>
-
-    <button type="submit">Sign Up</button>
-  </form>
-</div>

@@ -14,76 +14,24 @@
   }
 </script>
 
-<style>
-  .signup-container {
-    max-width: 500px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-
-  h2 {
-    color: #ed2b48;
-    margin-bottom: 1rem;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  input {
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-
-  button {
-    background-color: #ed2b48;
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: #c41f39;
-  }
-
-  label {
-    text-align: left;
-    font-weight: bold;
-    color: #444;
-  }
-</style>
-
-<div class="signup-container">
-  <h2>Create Your Account</h2>
-  <form on:submit|preventDefault={handleSubmit}>
-    <div>
-      <label for="name">Name</label>
-      <input id="name" type="text" bind:value={name} required />
+<div class="max-w-md mx-auto my-12 px-6 py-8 bg-white rounded-lg shadow-xl">
+  <h2 class="text-2xl font-semibold text-red-600 mb-6 text-center">Create Your Account</h2>
+  <form on:submit|preventDefault={handleSubmit} class="space-y-4">
+    <div class="space-y-2">
+      <label for="name" class="text-left font-bold text-gray-700">Name</label>
+      <input id="name" type="text" bind:value={name} required class="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
     </div>
 
-    <div>
-      <label for="age">Age</label>
-      <input id="age" type="number" min="0" bind:value={age} required />
+    <div class="space-y-2">
+      <label for="age" class="text-left font-bold text-gray-700">Age</label>
+      <input id="age" type="number" min="0" bind:value={age} required class="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
     </div>
 
-    <div>
-      <label for="password">Password</label>
-      <input id="password" type="password" bind:value={password} required />
+    <div class="space-y-2">
+      <label for="password" class="text-left font-bold text-gray-700">Password</label>
+      <input id="password" type="password" bind:value={password} required class="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
     </div>
 
-    <button type="submit">Sign Up</button>
+    <button type="submit" class="w-full py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition duration-300">Sign Up</button>
   </form>
 </div>

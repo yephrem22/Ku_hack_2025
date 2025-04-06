@@ -9,7 +9,7 @@
   
   <style>
     .header {
-      background-color: #ed2b48f7;
+      background-color: transparent;
       fill-opacity: 100;
       color: white;
       padding: 1rem 2rem;

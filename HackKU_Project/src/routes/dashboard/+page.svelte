@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <script>
   import { onMount } from "svelte";
   import CardLink from "$lib/CardLink.svelte";
@@ -10,19 +9,14 @@
   let currentUser;
 
   $: currentUser = $user;
-=======
  <!-- <script>
   import { onMount } from 'svelte';
   import CardLink from '../../lib/CardLink.svelte';
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
 
   const cards = [
     {
       href: "/risk-quiz",
       title: "Risk Factor Quiz",
-<<<<<<< HEAD
-      description: "Learn more about your lifestyle and Alzheimer’s risk.",
-=======
       description: "Learn more about your lifestyle and Alzheimer's risk."
     },
     {
@@ -86,7 +80,6 @@
       href: "/risk-quiz",
       title: "Risk Factor Quiz",
       description: "Learn more about your lifestyle and Alzheimer's risk."
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
     },
     {
       href: "/memento-box",
@@ -116,7 +109,6 @@
     "Double check your medication schedule today.",
   ];
 
-<<<<<<< HEAD
   let alertMessage = "";
   let showAlert = false;
 
@@ -158,7 +150,6 @@
     </div>
   </div>
 {/if}
-=======
   let currentReminder = reminders[0];
 
   function getRandomReminder() {
@@ -271,4 +262,3 @@
           </div>
         </div>
 
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9

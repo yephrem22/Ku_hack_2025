@@ -44,12 +44,29 @@
   </form>
 </div>
 
+<!-- <div class="log_in-container">
+  <h2>Log Into Recall</h2>
+  <form on:submit|preventDefault={handleSubmit}>
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text" bind:value={name} required />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input id="password" type="password" bind:value={password} required />
+    </div>
+
+    <button type="submit">Log In</button>
+  </form>
+</div> -->
+
 <style>
   .log_in-container {
     max-width: 500px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: white; 
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -97,23 +114,3 @@
     color: #444;
   }
 </style>
-<<<<<<< HEAD
-=======
-
-<div class="log_in-container">
-  <h2>Log Into Recall</h2>
-  <form on:submit|preventDefault={handleSubmit}>
-    <div>
-      <label for="name">Name</label>
-      <input id="name" type="text" bind:value={name} required />
-    </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input id="password" type="password" bind:value={password} required />
-    </div>
-
-    <button type="submit">Log In</button>
-  </form>
-</div>
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9

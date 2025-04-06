@@ -114,61 +114,6 @@
   getCurrentUserUuid();
 </script>
 
-<<<<<<< HEAD
-=======
-<style>
-.container {
-  max-width: 800px;
-  margin: 6rem auto 3rem auto; /* 🆕 Add more margin from the top */
-  padding: 3rem;
-  background: white;
-  opacity: 1;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-}
-
-  h2 {
-    color: #ed2b48; /* Signature red color */
-    text-align: center;
-    font-size: 2.5rem; /* Adjusted for larger size */
-    padding: 1rem;
-    background-color: transparent;
-    border: 2px solid #ed2b48; /* Light box border */
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
-    margin-bottom: 1.5rem;
-  }
-  .question-block {
-    margin-bottom: 2rem;
-  }
-  label {
-    color: black; 
-    font-weight: bold;
-  }
-  textarea {
-    width: 100%;
-    height: 70px;
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #000000;
-    margin-top: 0.5rem;
-    resize: vertical;
-    color: black;
-  }
-  button {
-    background-color: #ed2b48;
-    color: rgb(255, 255, 255);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    display: block;
-    margin: 2rem auto 0;
-  }
-</style>
-
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
 <div class="container">
   <h2>Memento Box</h2>
   {#each questions as question}
@@ -190,36 +135,33 @@
 <style>
   .container {
     max-width: 800px;
-    margin: auto;
+    margin: 6rem auto 3rem auto; /* 🆕 Add more margin from the top */
     padding: 3rem;
-    padding-top: 6rem; /* 🛠 Add this line: pushes content below fixed header */
     background: white;
+    opacity: 1;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
   }
 
   h2 {
-    color: #ed2b48;
+    color: #ed2b48; /* Signature red color */
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Adjusted for larger size */
     padding: 1rem;
-    background-color: #fff;
-    border: 2px solid #ed2b48;
+    background-color: transparent;
+    border: 2px solid #ed2b48; /* Light box border */
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
     margin-bottom: 1.5rem;
   }
-
   .question-block {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-
   label {
     color: black;
     font-weight: bold;
   }
-
   textarea {
     width: 100%;
     height: 70px;
@@ -230,7 +172,6 @@
     resize: vertical;
     color: black;
   }
-
   button {
     background-color: #ed2b48;
     color: rgb(255, 255, 255);

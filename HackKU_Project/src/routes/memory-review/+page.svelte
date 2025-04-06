@@ -42,13 +42,7 @@
 
   onMount(() => {
     questions = getRandomQuestions();
-<<<<<<< HEAD
-
-    // Retrieve the answers stored as an object
     const storedAnswers = localStorage.getItem("mementoAnswersMap");
-=======
-    const storedAnswers = localStorage.getItem('mementoAnswersMap');
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
     if (storedAnswers) {
       answerMap = JSON.parse(storedAnswers);
     }
@@ -63,13 +57,10 @@
   function revealAnswer(index) {
     revealedAnswers[index] = true;
   }
-<<<<<<< HEAD
 
   function goBack() {
     goto("/dashboard");
   }
-=======
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
 </script>
 
 <div class="container">
@@ -79,7 +70,6 @@
     {#each questions as question, i}
       <li class="question-block">
         <label>{question}</label>
-
         <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
 
         {#if revealedAnswers[i]}
@@ -87,7 +77,7 @@
             {#if answerMap[question]}
               <p>{answerMap[question]}</p>
             {:else}
-              <p><em>No answer found for this question.</em></p>
+              <p class="no-answer">No answer found for this question.</p>
             {/if}
           </div>
         {/if}
@@ -155,22 +145,14 @@
   }
 
   .dashboard-button {
-<<<<<<< HEAD
     margin: 2rem auto 0; /* Top margin, horizontal auto to center */
-=======
-    margin: 2rem auto 0;
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
     background-color: #ed2b48;
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     cursor: pointer;
-<<<<<<< HEAD
     display: block; /* Needed for margin auto to work on block elements */
-=======
-    display: block;
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
   }
 
   .answer {
@@ -183,38 +165,9 @@
     color: #333;
     font-style: italic;
   }
-<<<<<<< HEAD
-</style>
-=======
 
   .no-answer {
     color: #666;
     font-style: italic;
   }
 </style>
-
-<div class="container">
-  <h2>Memory Review Quiz</h2>
-
-  <ol>
-    {#each questions as question, i}
-      <li class="question-block">
-        <label>{question}</label>
-        <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
-
-        {#if revealedAnswers[i]}
-          <div class="answer">
-            {#if answerMap[question]}
-              <p>{answerMap[question]}</p>
-            {:else}
-              <p class="no-answer">No answer found for this question.</p>
-            {/if}
-          </div>
-        {/if}
-      </li>
-    {/each}
-  </ol>
-
-  <button on:click={() => goto('/dashboard')} class="dashboard-button">Back to Dashboard</button>
-</div>
->>>>>>> 75003fc16fa413203dead3908f24e2501def62b9

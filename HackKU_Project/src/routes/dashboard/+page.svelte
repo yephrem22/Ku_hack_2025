@@ -181,7 +181,7 @@
             // Setup interval for changing reminders
             reminderInterval = setInterval(() => {
               currentReminder = getRandomReminder();
-            }, 5000);
+            }, 10000);
         
             return () => {
               clearInterval(reminderInterval);

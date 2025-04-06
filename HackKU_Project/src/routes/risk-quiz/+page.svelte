@@ -92,7 +92,7 @@
   
   </script>
   
-  <div class="max-w-2xl mx-auto my-12 px-6 py-8 bg-white rounded-xl shadow-lg font-sans">
+  <div class="max-w-2xl mx-auto my-12 px-6 py-12 bg-white rounded-xl shadow-lg font-sans">
     <h2 class="text-2xl text-red-600 text-center mb-6">Risk Factor Quiz</h2> <!-- Title updated -->
     {#each questions as question}
         <div class="mb-6">
@@ -122,18 +122,17 @@
   </div>
   
   <style>
-    h2 {
-      color: #ed2b48; /* Signature red color */
-      text-align: center;
-      font-size: 2.5rem; /* Adjusted for larger size */
-      padding: 1rem;
-      padding-top: 6rem;
-      background-color: #fff;
-      border: 2px solid #ed2b48; /* Light box border */
-      border-radius: 8px;
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
-      margin-bottom: 1.5rem;
-    }
+  h2 {
+    color: #ed2b48; /* Signature red color */
+    text-align: center;
+    font-size: 2.5rem; /* Adjusted for larger size */
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px solid #ed2b48; /* Light box border */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
+    margin-bottom: 1.5rem;
+  }
 
   textarea {
     width: 100%;

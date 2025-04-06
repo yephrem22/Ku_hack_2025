@@ -1,61 +1,9 @@
-<!-- <script>
-    // Function to handle logout
-    function logout() {
-      window.location.href = '/'; // Redirect to homepage
-    }
-  </script>
-  
-  <style>
-    .header {
-      background-color: #ed2b48;
-      color: white;
-      padding: 1rem;
-      font-family: 'Arial';
-      font-size: 2rem;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between; /* Allow left and right alignment */
-      align-items: center;
-    }
-  
-    .logo {
-      margin-left: 1rem;
-    }
-  
-    .logout-button {
-      margin-right: 1rem;
-      background-color: white;
-      color: #ed2b48;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-  
-    .logout-button:hover {
-      background-color: #ffe6ea;
-    }
-  </style>
-  
-  <div class="header">
-    <div class="logo">Recall</div>
-    <button class="logout-button" on:click={logout}>Log Out</button>
-  </div>
-   -->
-   <script>
+<script>
  
     import logo from '../assets/logo3.png'; 
   
     function logout() {
-      window.location.href = '/'; // Redirect to homepage
+      window.location.href = '/'; 
     }
   </script>
   
@@ -134,7 +82,5 @@
         <path d="M10 16v-3H3v-2h7V8l6 4-6 4zM20 3H12v2h8v14h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
       </svg>
     </button>
-  </div>
-  
-
+  </div> 
   

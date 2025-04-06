@@ -31,9 +31,11 @@
   }
 
   main {
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color:transparent; 
+    border-radius: 16px;
     min-height: calc(100vh - 60px); 
     padding: 20px;
+    padding-top: 20px;
   }
 </style>
 

@@ -61,7 +61,7 @@
     max-width: 500px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: transparent;
+    background-color: white;
     color: black;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

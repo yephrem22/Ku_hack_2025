@@ -57,10 +57,9 @@
 <style>
 .container {
   max-width: 800px;
-  margin: auto;
+  margin: 6rem auto 3rem auto; /* 🆕 Add more margin from the top */
   padding: 3rem;
-  padding-top: 6rem; /* 🛠 Add this line: pushes content below fixed header */
-  background: transparent;
+  background: white;
   opacity: 1;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

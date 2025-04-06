@@ -64,25 +64,27 @@
 </script>
 
 <style>
-  .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-    padding-top: 6rem;
-    background: transparent;
-    opacity: 1;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
+.container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 5rem;       /* ✅ Extra space from the top */
+  padding: 2rem;
+  padding-top: 2rem;      /* ✅ Increased from 6rem to 7rem for better spacing */
+  background: white;
+  opacity: 100;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
 
   h2 {
     color: #ed2b48; /* Signature red color */
     text-align: center;
     font-size: 2.5rem; /* Adjusted for larger size */
     padding: 1rem;
-    background-color: transparent;
-    opacity: 1;
+    background-color: white;
+    opacity: 100 ;
     border: 2px solid #ed2b48; /* Light box border */
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
@@ -93,10 +95,13 @@
     list-style-type: decimal; /* Ordered list */
     padding-left: 1.5rem; /* Adds indentation to the list */
     color: black; /* Ensures text color is black */
+    border-color: black;
   }
 
   .question-block {
     margin-bottom: 1.5rem;
+    background-color: white;
+    border-color: black;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align questions to the left */
@@ -104,6 +109,7 @@
 
   label {
     font-weight: bold;
+    border-color: black;
     font-size: 1.2rem; /* Adjusted for better readability */
     color: black; /* Ensures text color is black */
   }
@@ -134,6 +140,8 @@
     margin-top: 1rem;
     font-style: italic;
     color: #555;
+    border-color: black;
+    background-color: white;
   }
 
 </style>

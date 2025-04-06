@@ -8,7 +8,7 @@
 </script>
 
 <div class={`max-w-3xl mx-auto my-12 px-6 py-10 text-center bg-transparent transform transition-all duration-500 ${animate ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-  <div class="bg-[#ed2b48] bg-opacity-100 text-white p-8 rounded-xl shadow-lg mb-8">
+  <div class="bg-[#ed2b48] bg-opacity-100 text-white p-8 rounded-xl shadow-lg mb-8 border-4 border-white">
     <h1 class="text-4xl font-bold mb-2">Welcome to Recall!</h1>
   </div>
 

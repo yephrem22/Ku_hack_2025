@@ -1,4 +1,4 @@
-<script>
+ <script>
   import { onMount } from 'svelte';
   import CardLink from '../../lib/CardLink.svelte';
 
@@ -37,7 +37,7 @@
 </script>
 
 <div class="min-h-screen flex items-center justify-center px-4 py-10 pt-24 bg-transparent"> 
-  <div class="w-full max-w-3xl p-8 text-center space-y-6 bg-transparent">
+  <div class="w-full max-w-3xl p-8 text-center space-y-6 bg-white rounded-2xl shadow-xl">
     <h2 class="text-3xl font-bold text-rose-600 mb-2">Welcome to Your Dashboard</h2>
     <p class="text-gray-700 mb-6">Choose an activity to get started</p>
 
@@ -59,4 +59,3 @@
     </div>
   </div>
 </div>
-

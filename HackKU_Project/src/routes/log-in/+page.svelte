@@ -19,7 +19,8 @@
     max-width: 500px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: white;
+    background-color: transparent; /* Semi-transparent white */
+    opacity: 1;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -43,6 +44,7 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     color: black;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent input */
   }
 
   button {
@@ -65,7 +67,6 @@
     font-weight: bold;
     color: #444;
   }
-
 </style>
 
 <div class="log_in-container">

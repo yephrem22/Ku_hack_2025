@@ -7,12 +7,12 @@
   });
 </script>
 
-<div class={`max-w-3xl mx-auto my-12 px-6 py-10 text-center bg-white transform transition-all duration-500 ${animate ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-  <div class="bg-[#ed2b48] text-white p-8 rounded-xl shadow-lg mb-8">
+<div class={`max-w-3xl mx-auto my-12 px-6 py-10 text-center bg-transparent transform transition-all duration-500 ${animate ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
+  <div class="bg-[#ed2b48] bg-opacity-100 text-white p-8 rounded-xl shadow-lg mb-8">
     <h1 class="text-4xl font-bold mb-2">Welcome to Recall!</h1>
   </div>
 
-  <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+  <div class="bg-gray-100 bg-opacity-90 p-6 rounded-lg shadow-md mb-6">
     <p class="text-lg text-gray-700">
       This site helps people with Alzheimer's reinforce important memories
       and build routines by engaging with personalized memory flashcards.
@@ -32,4 +32,3 @@
     </a>
   </div>
 </div>
-

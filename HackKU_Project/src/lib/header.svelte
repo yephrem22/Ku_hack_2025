@@ -3,13 +3,14 @@
     import logo from '../assets/logo3.png'; 
   
     function logout() {
-      window.location.href = '/'; 
+      window.location.href = '/'; // Redirect to homepage
     }
   </script>
   
   <style>
     .header {
-      background-color: #ed2b48;
+      background-color: #ed2b48f7;
+      fill-opacity: 100;
       color: white;
       padding: 1rem 2rem;
       font-family: 'Arial';

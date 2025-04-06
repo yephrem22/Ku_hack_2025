@@ -152,12 +152,14 @@
 </div>
 
 <style>
+  
   h2 {
     color: #ed2b48; /* Signature red color */
     text-align: center;
     font-size: 2.5rem; /* Adjusted for larger size */
     padding: 1rem;
-    background-color: #fff;
+    background-color: transparent;
+    opacity: 1;
     border: 2px solid #ed2b48; /* Light box border */
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */

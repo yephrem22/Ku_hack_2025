@@ -69,7 +69,8 @@
     margin: auto;
     padding: 2rem;
     padding-top: 6rem;
-    background: white;
+    background: transparent;
+    opacity: 1;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -80,7 +81,8 @@
     text-align: center;
     font-size: 2.5rem; /* Adjusted for larger size */
     padding: 1rem;
-    background-color: #fff;
+    background-color: transparent;
+    opacity: 1;
     border: 2px solid #ed2b48; /* Light box border */
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */

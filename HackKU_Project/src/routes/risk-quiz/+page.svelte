@@ -134,5 +134,16 @@
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
       margin-bottom: 1.5rem;
     }
+
+  textarea {
+    width: 100%;
+    height: 70px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    margin-top: 0.5rem;
+    resize: vertical;
+    color: black;
+  }
   </style>
   

@@ -7,75 +7,26 @@
   });
 </script>
 
-<style>
-  .container {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    transform: scale(0.9);
-    opacity: 0;
-    transition: all 0.6s ease;
-  }
-
-  .container.animate {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  .header-box {
-    background-color: #ed2b48;
-    color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin: 0;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #444;
-    margin: 1rem 0 2rem;
-  }
-
-  button {
-    background-color: #ed2b48;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: #c41f39;
-  }
-
-  a {
-    text-decoration: none;
-  }
-</style>
-
-<div class="container {animate ? 'animate' : ''}">
-  <div class="header-box">
-    <h1>Welcome to Recall</h1>
+<div class={`max-w-3xl mx-auto my-12 px-6 py-10 text-center bg-white transform transition-all duration-500 ${animate ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
+  <div class="bg-[#ed2b48] text-white p-8 rounded-xl shadow-lg mb-8">
+    <h1 class="text-4xl font-bold mb-2">Welcome to Recall</h1>
   </div>
-  <p>
+
+  <p class="text-lg text-gray-700 mb-8">
     This site helps people with Alzheimer's reinforce important memories
     and build routines by engaging with personalized memory flashcards.
   </p>
-  <a href="/log-in">
-    <button>Log In</button>
-  </a>
-  <a href="/signup">
-    <button>Sign Up</button>
-  </a>
+
+  <div class="flex justify-center gap-4">
+    <a href="/log-in">
+      <button class="bg-[#ed2b48] hover:bg-[#c41f39] text-white px-6 py-2 rounded-md text-base transition-colors duration-300">
+        Log In
+      </button>
+    </a>
+    <a href="/signup">
+      <button class="bg-[#ed2b48] hover:bg-[#c41f39] text-white px-6 py-2 rounded-md text-base transition-colors duration-300">
+        Sign Up
+      </button>
+    </a>
+  </div>
 </div>

@@ -68,6 +68,7 @@
     max-width: 800px;
     margin: auto;
     padding: 2rem;
+    padding-top: 6rem;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -75,22 +76,34 @@
   }
 
   h2 {
-    color: #ed2b48;
+    color: #ed2b48; /* Signature red color */
     text-align: center;
+    font-size: 2.5rem; /* Adjusted for larger size */
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px solid #ed2b48; /* Light box border */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for box effect */
+    margin-bottom: 1.5rem;
+  }
+
+  ol {
+    list-style-type: decimal; /* Ordered list */
+    padding-left: 1.5rem; /* Adds indentation to the list */
+    color: black; /* Ensures text color is black */
   }
 
   .question-block {
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align questions to the left */
   }
 
   label {
     font-weight: bold;
-  }
-
-  .answer {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #555;
+    font-size: 1.2rem; /* Adjusted for better readability */
+    color: black; /* Ensures text color is black */
   }
 
   button {
@@ -101,34 +114,50 @@
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     cursor: pointer;
+    align-self: flex-end; /* Align the button to the right */
   }
 
-  .back-button {
-    background-color: #ed2b48;
-    margin-top: 2rem;
+  .dashboard-button {
+  margin: 2rem auto 0; /* Top margin, horizontal auto to center */
+  background-color: #ed2b48;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block; /* Needed for margin auto to work on block elements */
+}
+
+  .answer {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #555;
   }
+
 </style>
 
 <div class="container">
   <h2>Memory Review Quiz</h2>
 
-  {#each questions as question, i}
-    <div class="question-block">
-      <label>{question}</label>
+  <ol>
+    {#each questions as question, i}
+      <li class="question-block">
+        <label>{question}</label>
 
-      <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
+        <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
 
-      {#if revealedAnswers[i]}
-        <div class="answer">
-          {#if answerMap[question]}
-            <p>{answerMap[question]}</p>
-          {:else}
-            <p><em>No answer found for this question.</em></p>
-          {/if}
-        </div>
-      {/if}
-    </div>
-  {/each}
+        {#if revealedAnswers[i]}
+          <div class="answer">
+            {#if answerMap[question]}
+              <p>{answerMap[question]}</p>
+            {:else}
+              <p><em>No answer found for this question.</em></p>
+            {/if}
+          </div>
+        {/if}
+      </li>
+    {/each}
+  </ol>
 
-  <button on:click={goBack} class="back-button">Back to Dashboard</button>
+  <button on:click={() => goto('/dashboard')} class="dashboard-button">Back to Dashboard</button>
 </div>

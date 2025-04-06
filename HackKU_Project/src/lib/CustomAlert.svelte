@@ -10,7 +10,7 @@
   {#if showAlert}
     <div class="custom-alert">
       <div class="custom-alert-content">
-        <p>{alertMessage}</p> <!-- ✅ Make sure this line exists -->
+        <p>{alertMessage}</p> <!-- Make sure this line exists -->
         <button on:click={closeAlert}>OK</button>
       </div>
     </div>

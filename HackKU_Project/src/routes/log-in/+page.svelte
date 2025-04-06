@@ -42,6 +42,7 @@
     font-size: 1rem;
     border-radius: 6px;
     border: 1px solid #ccc;
+    color: black;
   }
 
   button {
@@ -64,6 +65,7 @@
     font-weight: bold;
     color: #444;
   }
+
 </style>
 
 <div class="log_in-container">

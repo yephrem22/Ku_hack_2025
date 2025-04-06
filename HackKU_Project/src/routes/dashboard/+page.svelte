@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import CardLink from '../../lib/CardLink.svelte';
-  import CustomAlert from '../../lib/CustomAlert.svelte'; // Import custom alert
+  import CustomAlert from '../../lib/CustomAlert.svelte';
 
   const cards = [
     {
@@ -48,41 +48,19 @@
   });
 </script>
 
-<style>
-  .dashboard {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+<!-- Tailwind-based layout -->
+<div class="min-h-screen bg-white flex items-center justify-center px-4 py-10">
+  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-8 text-center">
+    <h2 class="text-3xl font-bold text-rose-600 mb-2">Welcome to Your Dashboard</h2>
+    <p class="text-gray-700 mb-6">Choose an activity to get started</p>
 
-  h2 {
-    color: #ed2b48;
-    margin-bottom: 1rem;
-  }
+    <!-- Stack the cards vertically using Tailwind's flex and flex-col utilities -->
+    <div class="flex flex-col gap-4">
+      {#each cards as card}
+        <CardLink {...card} />
+      {/each}
+    </div>
 
-  .card-links {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-</style>
-
-<div class="dashboard">
-  <h2>Welcome to Your Dashboard</h2>
-  <p>Choose an activity to get started</p>
-
-  <div class="card-links">
-    {#each cards as card}
-      <CardLink {...card} />
-    {/each}
+    <CustomAlert {alertMessage} bind:showAlert />
   </div>
-
-  <CustomAlert {alertMessage} bind:showAlert />
 </div>
-

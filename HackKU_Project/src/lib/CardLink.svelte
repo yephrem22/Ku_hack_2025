@@ -6,7 +6,7 @@
   
   <a href={href} class="card-link">
     <div class="card">
-      <h3>{title}</h3>
+      <h3><b>{title}</b></h3>
       <p>{description}</p>
     </div>
   </a>

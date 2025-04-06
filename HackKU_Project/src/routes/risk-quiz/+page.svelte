@@ -95,8 +95,7 @@
 </script>
 
 <div
-  class="max-w-2xl mx-auto my-12 px-6 py-12 bg-white rounded-xl shadow-lg font-sans"
->
+  class="max-w-2xl mx-auto my-12 px-6 py-12 bg-white rounded-xl shadow-lg font-sans mt-24">
   <h2 class="text-2xl text-red-600 text-center mb-6">Risk Factor Quiz</h2>
   <!-- Title updated -->
   {#each questions as question}

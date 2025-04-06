@@ -78,10 +78,10 @@
     margin-bottom: 1.5rem;
   }
   .question-block {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   label {
-    color: black; /* Change to black */
+    color: black; 
     font-weight: bold;
   }
   textarea {

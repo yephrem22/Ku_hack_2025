@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
+  import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
 
   const allQuestions = [
     "What is your earliest memory?",
@@ -28,7 +28,7 @@
     "What’s an address you remember living at?",
     "What’s a recipe or meal you’ve passed down to others?",
     "What do your grandchildren call you?",
-    "Is there a family heirloom or item that means a lot to you?"
+    "Is there a family heirloom or item that means a lot to you?",
   ];
 
   let questions = [];
@@ -45,13 +45,18 @@
     questions = getRandomQuestions();
 
     // Retrieve the answers stored as an object
-    const storedAnswers = localStorage.getItem('mementoAnswersMap');
+    const storedAnswers = localStorage.getItem("mementoAnswersMap");
     if (storedAnswers) {
       answerMap = JSON.parse(storedAnswers);
     }
 
     // Default all answers to hidden
     revealedAnswers = Array(questions.length).fill(false);
+
+    if (!currentUser) {
+      goto("/"); // Redirect if user not logged in
+      return;
+    }
   });
 
   function revealAnswer(index) {
@@ -59,9 +64,37 @@
   }
 
   function goBack() {
-    goto('/dashboard');
+    goto("/dashboard");
   }
 </script>
+
+<div class="container">
+  <h2>Memory Review Quiz</h2>
+
+  <ol>
+    {#each questions as question, i}
+      <li class="question-block">
+        <label>{question}</label>
+
+        <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
+
+        {#if revealedAnswers[i]}
+          <div class="answer">
+            {#if answerMap[question]}
+              <p>{answerMap[question]}</p>
+            {:else}
+              <p><em>No answer found for this question.</em></p>
+            {/if}
+          </div>
+        {/if}
+      </li>
+    {/each}
+  </ol>
+
+  <button on:click={() => goto("/dashboard")} class="dashboard-button"
+    >Back to Dashboard</button
+  >
+</div>
 
 <style>
   .container {
@@ -118,46 +151,19 @@
   }
 
   .dashboard-button {
-  margin: 2rem auto 0; /* Top margin, horizontal auto to center */
-  background-color: #ed2b48;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: block; /* Needed for margin auto to work on block elements */
-}
+    margin: 2rem auto 0; /* Top margin, horizontal auto to center */
+    background-color: #ed2b48;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block; /* Needed for margin auto to work on block elements */
+  }
 
   .answer {
     margin-top: 1rem;
     font-style: italic;
     color: #555;
   }
-
 </style>
-
-<div class="container">
-  <h2>Memory Review Quiz</h2>
-
-  <ol>
-    {#each questions as question, i}
-      <li class="question-block">
-        <label>{question}</label>
-
-        <button on:click={() => revealAnswer(i)}>Reveal Answer</button>
-
-        {#if revealedAnswers[i]}
-          <div class="answer">
-            {#if answerMap[question]}
-              <p>{answerMap[question]}</p>
-            {:else}
-              <p><em>No answer found for this question.</em></p>
-            {/if}
-          </div>
-        {/if}
-      </li>
-    {/each}
-  </ol>
-
-  <button on:click={() => goto('/dashboard')} class="dashboard-button">Back to Dashboard</button>
-</div>

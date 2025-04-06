@@ -27,6 +27,10 @@
         riskAnswerMap[q] = ""; // Initialize empty answers
       });
     }
+    if (!currentUser) {
+      goto("/"); // Redirect if user not logged in
+      return;
+    }
   });
 
   function submitAnswers() {
@@ -101,6 +105,7 @@
   <!-- Title updated -->
   {#each questions as question}
     <div class="mb-6">
+      <!-- svelte-ignore a11y_label_has_associated_control -->
       <label class="block font-semibold text-gray-800 mb-2">{question}</label>
       <textarea
         bind:value={riskAnswerMap[question]}

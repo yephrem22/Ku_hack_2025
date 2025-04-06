@@ -1,18 +1,48 @@
 <script>
-  import { goto } from '$app/navigation';
+  import { goto } from "$app/navigation";
+  import { supabase } from "$lib/supabaseClient";
+  import { user } from "$lib/stores/user";
 
-  let name = '';
-  let password = '';
+  let email = "";
+  let password = "";
 
-  function handleSubmit() {
-    // In a real app you'd handle validation/auth here
-    if (name && password) {
-      goto('/dashboard');
+  async function handleSubmit() {
+    if (!email || !password) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert(error.message);
     } else {
-      alert('Please fill out all fields.');
+      // Update the user store
+      user.set(data.user);
+      goto("/dashboard");
     }
   }
 </script>
+
+<div class="log_in-container">
+  <h2>Log Into Recall</h2>
+  <form on:submit|preventDefault={handleSubmit}>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" bind:value={email} required />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input id="password" type="password" bind:value={password} required />
+    </div>
+
+    <button type="submit">Log In</button>
+  </form>
+</div>
 
 <style>
   .log_in-container {
@@ -65,22 +95,4 @@
     font-weight: bold;
     color: #444;
   }
-
 </style>
-
-<div class="log_in-container">
-  <h2>Log Into Recall</h2>
-  <form on:submit|preventDefault={handleSubmit}>
-    <div>
-      <label for="name">Name</label>
-      <input id="name" type="text" bind:value={name} required />
-    </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input id="password" type="password" bind:value={password} required />
-    </div>
-
-    <button type="submit">Log In</button>
-  </form>
-</div>

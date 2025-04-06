@@ -49,7 +49,10 @@ declare module '$env/static/private' {
 	export const USER: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
+<<<<<<< HEAD
 	export const CONDA_EXE: string;
+=======
+>>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
 	export const GEMINI_KEY: string;
 	export const SSH_AUTH_SOCK: string;
 	export const VSCODE_PROFILE_INITIALIZED: string;
@@ -153,7 +156,10 @@ declare module '$env/dynamic/private' {
 		USER: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
+<<<<<<< HEAD
 		CONDA_EXE: string;
+=======
+>>>>>>> 75003fc16fa413203dead3908f24e2501def62b9
 		GEMINI_KEY: string;
 		SSH_AUTH_SOCK: string;
 		VSCODE_PROFILE_INITIALIZED: string;
